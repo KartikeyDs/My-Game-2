@@ -1,6 +1,7 @@
-//Ryuk Theme c;
-//Ryuk Theme b;
-//Light's b;
+/*
+By Kartikey Das Shukla
+Guide Teacher - Shrutika Nikalje
+*/
 
 var gameState = 0;
 var score = 0;
@@ -20,7 +21,6 @@ var storm_so
 var explosion_
 //Timer 
 var timer = 0;
-
 //Game objects:-
 var heart, heart_Img;
 var bricks_1, bricks_1_Img;
@@ -90,74 +90,71 @@ var bg2,bg3,bg4,bg5,bg6,bg7,bg8,bg9,bg10,bg11,bg12,bg13,bg14,bg15,bg16,bg17,bg18
 function preload() {
 
 //Story Sounds:-
-storm_so = loadSound("/Sound/storm_s.mp3");
-explosion_ = loadSound("/Sound/explosion.mp3");
-crunching = loadSound("/Sound/Crunch.mp3");
-blast = loadSound("/Sound/fireball.mp3");
-coin_ = loadSound("/Sound/coin.wav");
+//storm_so = loadSound("Sound/storm_s.mp3");
+explosion_ = loadSound("Sound/explosion.mp3");
+crunching = loadSound("Sound/Crunch.mp3");
+blast = loadSound("Sound/fireball.mp3");
+coin_ = loadSound("Sound/coin.wav");
 //lava_ = loadSound("/Sound/Lava.mp3");
-home = loadSound("/Sound/Home music.mp3");
-game = loadSound("/Sound/Game music.mp3");
-loose = loadSound("/Sound/Loose music.mp3");
-win = loadSound("Sound/Win Music.mp3")
+home = loadSound("Sound/Home music.mp3");
+game = loadSound("Sound/Game music.mp3");
+//loose = loadSound("Sound/Loose music.mp3");
+//win = loadSound("Sound/Win Music.mp3")
                                                  
 //Buttons:-
-start_btn_Img = loadImage("/Buttons/e.png");
-play_btn_Img = loadImage("/Buttons/play.png");
+start_btn_Img = loadImage("Buttons/start.png");
+play_btn_Img = loadImage("Buttons/play.png");
 
 //Backgrounds:-
 
-bg2_Img = loadImage("/Backgrounds/b2.JPG ")
+bg2_Img = loadImage("Backgrounds/background_.jpg")
 
 //Images:-
-bricks_1_Img = loadImage("/level/Bricks.png");
-spikes_Img = loadImage("/level/Spikes.png");
-lava_Img = loadImage("/level/Lava.png")
-brick_Img = loadImage("/level/Brick.png");
-d = loadImage("/Hero g/h_0.png");
-bricksr_Img = loadImage("/level/Bricks3.png");
-health0 = loadImage("Health/fr0.PNG")
-health1 = loadImage("Health/fr1.PNG")
-health2 = loadImage("Health/fr2.PNG")
-health3 = loadImage("Health/fr3.PNG")
-health4 = loadImage("Health/fr4.PNG")
-health5 = loadImage("Health/fr5.PNG")
-health6 = loadImage("Health/fr6.PNG")
-health7 = loadImage("Health/fr7.PNG")
-health8 = loadImage("Health/fr8.PNG")
-health9 = loadImage("Health/fr9.PNG");
-heart_Img = loadImage("/level/Heart.png");
-brickb_Img = loadImage("/level/Bricks2.png");
+bricks_1_Img = loadImage("level/Bricks.png");
+spikes_Img = loadImage("level/Spikes.png");
+lava_Img = loadImage("level/Lava.png")
+brick_Img = loadImage("level/Brick.png");
+d = loadImage("Hero g/h_0.png");
+bricksr_Img = loadImage("level/Bricks3.png");
+health0 = loadImage("Health/fr0.png")
+health1 = loadImage("Health/fr1.png")
+health2 = loadImage("Health/fr2.png")
+health3 = loadImage("Health/fr3.png")
+health4 = loadImage("Health/fr4.png")
+health5 = loadImage("Health/fr5.png")
+health6 = loadImage("Health/fr6.png")
+health7 = loadImage("Health/fr7.png")
+health8 = loadImage("Health/fr8.png")
+health9 = loadImage("Health/fr9.png");
+heart_Img = loadImage("level/Heart.png");
+brickb_Img = loadImage("level/Bricks2.png");
 
 //Animations:-
 
-bg_home_Img = loadAnimation("/Home/_0.png","/Home/_1.png","/Home/_2.png","/Home/_3.png","/Home/_4.png","/Home/_5.png","/Home/_6.png","/Home/_7.png","/Home/_8.png","/Home/_9.png","/Home/_10.png","/Home/_11.png","/Home/_12.png");
+bg_home_Img = loadAnimation("Home/ho_0.png","Home/ho_1.png","Home/ho_2.png","Home/ho_3.png","Home/ho_4.png","Home/ho_5.png","Home/ho_6.png","Home/ho_7.png","Home/ho_8.png","Home/ho_9.png","Home/ho_10.png","Home/ho_11.png","Home/ho_12.png");
 //storm_Img = loadAnimation("/Story/0.png ", "/Story/1.png","/Story/2.png", "/Story/3.png", "/Story/4.png", "/Story/5.png", "/Story/6.png", "/Story/7.png", "/Story/8.png", "/Story/9.png", "/Story/10.png", "/Story/11.png", "/Story/12.png", "/Story/13.png", "/Story/14.png", "/Story/15.png", "/Story/16.png", "/Story/17.png", "/Story/18.png", "/Story/19.png", "/Story/20.png", "/Story/21.png", "/Story/22.png", "/Story/23.png", "/Story/24.png", "/Story/25.png", "/Story/26.png", "/Story/27.png", "/Story/28.png", "/Story/29.png", "/Story/30.png", "/Story/31.png", "/Story/32.png", "/Story/33.png", "/Story/34.png", "/Story/35.png");
 //island_Img = loadAnimation("/Story/36.png", "/Story/37.png", "/Story/38.png", "/Story/39.png", "/Story/40.png", "/Story/41.png", "/Story/42.png", "/Story/43.png", "/Story/44.png", "/Story/45.png", "/Story/46.png", "/Story/47.png", "/Story/48.png", "/Story/49.png")
-jin_a_Img = loadAnimation("/Hero a/a_0.png","/Hero a/a_1.png","/Hero a/a_2.png","/Hero a/a_3.png","/Hero a/a_4.png","/Hero a/a_5.png","/Hero a/a_6.png","/Hero a/a_7.png","/Hero a/a_8.png","/Hero a/a_9.png",)
-l = loadAnimation("/Hero a_l/a_0_l.png","/Hero a_l/a_1_l.png","/Hero a_l/a_2_l.png","/Hero a_l/a_3_l.png","/Hero a_l/a_4_l.png","/Hero a_l/a_5_l.png","/Hero a_l/a_6_l.png","/Hero a_l/a_7_l.png","/Hero a_l/a_8_l.png","/Hero a_l/a_9_l.png")
-bomb_Img = loadAnimation("/Bomb/b_1.png","/Bomb/b_2.png","/Bomb/b_3.png","/Bomb/b_4.png","/Bomb/b_5.png","/Bomb/b_6.png","/Bomb/b_7.png","/Bomb/b_8.png","/Bomb/b_9.png","/Bomb/b_10.png","/Bomb/b_11.png","/Bomb/b_12.png",)
-question_b_Img = loadAnimation("/question box/q_0.png","/question box/q_1.png","/question box/q_2.png","/question box/q_3.png")
-mob_Img = loadAnimation("/Mob/m_1.png","/Mob/m_2.png","/Mob/m_3.png","/Mob/m_4.png","/Mob/m_5.png","/Mob/m_6.png","/Mob/m_7.png","/Mob/m_8.png",)
-x = loadAnimation("/Hero b/b_0.png","/Hero b/b_1.png","/Hero b/b_2.png","/Hero b/b_3.png","/Hero b/b_4.png","/Hero b/b_5.png","/Hero b/b_6.png","/Hero b/b_7.png","/Hero b/b_8.png","/Hero b/b_9.png","/Hero b/b_10.png","/Hero b/b_11.png","/Hero b/b_12.png","/Hero b/b_13.png","/Hero b/b_14.png","/Hero b/b_15.png","/Hero b/b_16.png",)
-coin_Img = loadAnimation("/coin/co0.png","/coin/co1.png","/coin/co2.png","/coin/co3.png","/coin/co4.png","/coin/co5.png");
-fireball_Img = loadAnimation("/fireball/f0.png","/fireball/f1.png","/fireball/f2.png","/fireball/f3.png","/fireball/f4.png","/fireball/f5.png","/fireball/f6.png","/fireball/f7.png","/fireball/f8.png","/fireball/f9.png","/fireball/f10.png","/fireball/f11.png","/fireball/f12.png","/fireball/f13.png","/fireball/f14.png","/fireball/f15.png","/fireball/f16.png","/fireball/f17.png","/fireball/f18.png","/fireball/f19.png","/fireball/f20.png","/fireball/f21.png","/fireball/f22.png")
-knight_Img = loadAnimation("/knight/k0.PNG","/knight/k1.PNG", "/knight/k2.PNG", "/knight/k3.PNG", "/knight/k4.PNG", "/knight/k5.PNG", "/knight/k6.PNG", "/knight/k7.PNG", "/knight/k8.PNG", "/knight/k9.PNG", "/knight/k10.PNG", "/knight/k11.PNG", "/knight/k12.PNG", "/knight/k13.PNG", "/knight/k14.PNG", "/knight/k15.PNG", "/knight/k16.PNG")
-bombr_Img = loadAnimation("/Bomb_r/br_0.png","/Bomb_r/br_1.png","/Bomb_r/br_2.png","/Bomb_r/br_3.png","/Bomb_r/br_4.png","/Bomb_r/br_5.png","/Bomb_r/br_6.png","/Bomb_r/br_7.png","/Bomb_r/br_8.png","/Bomb_r/br_9.png","/Bomb_r/br_10.png","/Bomb_r/br_11.png")
-mobr_Img = loadAnimation("/Mob_r/m_r.png", "/Mob_r/m_r1.png",  "/Mob_r/m_r2.png", "/Mob_r/m_r3.png", "/Mob_r/m_r4.png", "/Mob_r/m_r5.png", "/Mob_r/m_r6.png", "/Mob_r/m_r7.png")
-treasure_Img = loadAnimation("/Treasure/tr1.png","/Treasure/tr2.png","/Treasure/tr3.png","/Treasure/tr4.png","/Treasure/tr5.png","/Treasure/tr6.png","/Treasure/tr7.png","/Treasure/tr8.png","/Treasure/tr9.png","/Treasure/tr10.png","/Treasure/tr11.png","/Treasure/tr12.png")
-//y = loadAnimation("/Hero c/c_0.png","/Hero c/c_1.png","/Hero c/c_2.png","/Hero c/c_3.png","/Hero c/c_4.png","/Hero c/c_5.png","/Hero c/c_6.png","/Hero c/c_7.png","/Hero c/c_8.png","/Hero c/c_9.png","/Hero c/c_10.png","/Hero c/c_11.png","/Hero c/c_12.png","/Hero c/c_13.png","/Hero c/c_14.png","/Hero c/c_15.png","/Hero c/c_16.png","/Hero c/c_17.png")
-
+jin_a_Img = loadAnimation("Hero a/a_0.png","Hero a/a_1.png","Hero a/a_2.png","Hero a/a_3.png","Hero a/a_4.png","Hero a/a_5.png","Hero a/a_6.png","Hero a/a_7.png","Hero a/a_8.png","Hero a/a_9.png",)
+l = loadAnimation("Hero a_l/a_0_l.png","Hero a_l/a_1_l.png","Hero a_l/a_2_l.png","Hero a_l/a_3_l.png","Hero a_l/a_4_l.png","Hero a_l/a_5_l.png","Hero a_l/a_6_l.png","Hero a_l/a_7_l.png","Hero a_l/a_8_l.png","Hero a_l/a_9_l.png")
+bomb_Img = loadAnimation("Bomb/b_1.png","Bomb/b_2.png","Bomb/b_3.png","Bomb/b_4.png","Bomb/b_5.png","Bomb/b_6.png","Bomb/b_7.png","Bomb/b_8.png","Bomb/b_9.png","Bomb/b_10.png","Bomb/b_11.png","Bomb/b_12.png",)
+question_b_Img = loadAnimation("question box/q_0.png","question box/q_1.png","question box/q_2.png","question box/q_3.png")
+mob_Img = loadAnimation("Mob/m_1.png","Mob/m_2.png","Mob/m_3.png","Mob/m_4.png","Mob/m_5.png","Mob/m_6.png","Mob/m_7.png","Mob/m_8.png",)
+x = loadAnimation("Hero b/b_0.png","Hero b/b_1.png","Hero b/b_2.png","Hero b/herob_3.png","Hero b/b_4.png","Hero b/b_5.png","Hero b/b_6.png","Hero b/b_7.png","Hero b/b_8.png","Hero b/b_9.png","Hero b/b_10.png","Hero b/b_11.png","Hero b/b_12.png","Hero b/b_13.png","Hero b/b_14.png","Hero b/b_15.png","Hero b/b_16.png",)
+//y = loadAnimation("/Hero c/c_0.png","/Hero c/c_1","/Hero c/c_2","/Hero c/c_3  ","/Hero c/c_4","/Hero c/c_5","/Hero c/c_6","/Hero c/c_7","/Hero c/c_8","/Hero c/c_9","/Hero c/c_10","/Hero c/c_11","/Hero c/c_12","/Hero c/c_13","/Hero c/c_14","/Hero c/c_15","/Hero c/c_16",)
+coin_Img = loadAnimation("coin/co0.png","coin/co1.png","coin/co2.png","coin/co3.png","coin/co4.png","coin/co5.png");
+fireball_Img = loadAnimation("fireball/f0.png","fireball/f1.png","fireball/f2.png","fireball/f3.png","fireball/f4.png","fireball/f5.png","fireball/f6.png","fireball/f7.png","fireball/f8.png","fireball/f9.png","fireball/f10.png","fireball/f11.png","fireball/f12.png","fireball/f13.png","fireball/f14.png","fireball/f15.png","fireball/f16.png","fireball/f17.png","fireball/f18.png","fireball/f19.png","fireball/f20.png","fireball/f21.png","fireball/f22.png")
+knight_Img = loadAnimation("knight/k0.png","knight/k1.png", "knight/k2.png", "knight/k3.png", "knight/k4.png", "knight/k5.png", "knight/k6.png", "knight/k7.png", "knight/k8.png", "knight/k9.png", "knight/k10.png", "knight/k11.png", "knight/k12.png", "knight/k13.png", "knight/k14.png", "knight/k15.png", "knight/k16.png")
+bombr_Img = loadAnimation("Bomb_r/br_0.png","Bomb_r/br_1.png","Bomb_r/br_2.png","Bomb_r/br_3.png","Bomb_r/br_4.png","Bomb_r/br_5.png","Bomb_r/br_6.png","Bomb_r/br_7.png","Bomb_r/br_8.png","Bomb_r/br_9.png","Bomb_r/br_10.png","Bomb_r/br_11.png")
+mobr_Img = loadAnimation("Mob_r/m_r.png", "Mob_r/m_r1.png",  "Mob_r/m_r2.png", "Mob_r/m_r3.png", "Mob_r/m_r4.png", "Mob_r/m_r5.png", "Mob_r/m_r6.png", "Mob_r/m_r7.png")
+treasure_Img = loadAnimation("Treasure/tr1.png","Treasure/tr2.png","Treasure/tr3.png","Treasure/tr4.png","Treasure/tr5.png","Treasure/tr6.png","Treasure/tr7.png","Treasure/tr8.png","Treasure/tr9.png","Treasure/tr10.png","Treasure/tr11.png","Treasure/tr12.png")
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
-  home.loop()
+  home.loop();
 
-  if(gameState === 3){
-    loose.play();
-    }
+  
 
   bg13 = createSprite(displayWidth+12300, displayHeight-420);
   bg13.addImage("bg2_",bg2_Img);
@@ -781,30 +778,41 @@ function setup() {
   bomb_4.velocityY = -3
   }
 
-  if(bomb_.isTouching(in1)){
-  bomb_.velocityX = 4;
+  if(bomb_.isTouching(in1)&&gameState === 2){
   bomb_.visible = false;;
   bomb_r.visible = true;
   }
 
-  if(bomb_.isTouching(in2)){
-  bomb_.velocityX = -4;
+  if(bomb_.isTouching(in1)){
+    bomb_.velocityX = 4;
+  }
+
+  if(bomb_.isTouching(in2)&&gameState === 2){
   bomb_r.visible = false;
   bomb_.visible = true;
   }
 
-  if(bomb_1.isTouching(in1)){
-  bomb_1.velocityX = 4;
-  bomb_1.visible = false;
+  if(bomb_.isTouching(in2)){
+    bomb_.velocityX = -4;
+  }
+
+  if(bomb_1.isTouching(in1)&&gameState === 2 ){
+   bomb_1.visible = false;
   bomb_1r.visible = true;
   }
+
+  if(bomb_1.isTouching(in1)){
+    bomb_1.velocityX = 4;
+  }
     
-  if(bomb_1.isTouching(in2)){
-  bomb_1.velocityX = -4;
-  bomb_1r.visible = false;
+  if(bomb_1.isTouching(in2)&&gameState === 2){
+   bomb_1r.visible = false;
   bomb_1.visible = true;
   }
 
+  if(bomb_1.isTouching(in2)){
+    bomb_1.velocityX = -4;
+  }
   if(mob_.isTouching(in3)){
   mob_.velocityX = 2;
   mob_.visible = false;
@@ -877,7 +885,8 @@ function setup() {
   mob_2r.visible = false;
   mob_2.visible = true;
   }
- 
+
+                  
               
   if(mousePressedOver(start_btn)){
   jin_a.x = -10000
@@ -1071,15 +1080,6 @@ function setup() {
     jin_a.velocityX = 0;
     }
 
-    if(keyCode===120&&jin_a.x>9200&&gameState === 3){
-      jin_x.visible = false;
-      jin_a.visible = false;
-      jin_d.visible = false;
-      jin_l.visible = false;
-      jin_y.visible = true;
-      jin_a.velocityX = 0;
-      }
-
   jin_l.velocityY = jin_l.velocityY + 0.8;
   jin_a.velocityY = jin_a.velocityY + 0.8;
   jin_d.velocityY = jin_d.velocityY + 0.8;
@@ -1215,19 +1215,19 @@ function setup() {
     jin_l.visible = false;
     jin_d.visible = false;
     knight_health = knight_health-0.5 
-    health = health-0.5
+    health = health-0.25
     jin_a.velocityX = 0;
     }
 
     if(jin_a.isTouching(knight2)){
       knight2_health = knight2_health-0.5;
-      health = health-0.5;   
+      health = health-0.25;   
       jin_a.velocityX = 0;
       }
 
       if(jin_a.isTouching(knight3)){
         knight3_health = knight3_health-0.5   
-        health = health-0.5;
+        health = health-0.25;
         jin_a.velocityX = 0;
         }
 
@@ -1655,12 +1655,13 @@ health = health-50
   }
 
   if(gameState === 2) {
+    
     textFont("Georgia");
     fill("white")
     textSize(20)
     text("1) Hit the mistery box", jin_a.x-650,displayHeight-700);
-    text("2) Collect coins to get hint for treasure", jin_a.x-650, displayHeight-670);
-    text("3) Deafeat all the knights to enter the final battle", jin_a.x-650, displayHeight-640);
+    text("2) Collect coins", jin_a.x-650, displayHeight-670);
+    text("3) Deafeat all the knights", jin_a.x-650, displayHeight-640);
     textSize(30)
     text("Objectives :-", jin_a.x-650,displayHeight-730);
     text("Use arrow keys to move ", displayHeight-1400, displayHeight-400)
@@ -1677,8 +1678,8 @@ health = health-50
     text("Press 'z' to attack", displayWidth+9950,displayHeight-720);
     textSize(20)
     text("1) Hit the mistery box", jin_a.x-650,displayHeight-700);
-    text("2) Collect coins to get hint for treasure", jin_a.x-650, displayHeight-670);
-    text("3) Deafeat all the knights to enter the final battle", jin_a.x-650, displayHeight-640);
+    text("2) Collect coins", jin_a.x-650, displayHeight-670);
+    text("3) Deafeat all the knights", jin_a.x-650, displayHeight-640);
     textSize(30)
     text("Objectives :-", jin_a.x-650,displayHeight-730);
     textSize(70);
@@ -1712,18 +1713,17 @@ textSize(40)
     textSize(150)
         text("You survived ", 39650, displayHeight-400);
         textSize(30)
-        text("By :- Kartikey Das Shukla", 39320, displayHeight-175);
-        text("Guide teacher :- Shrutika Nikalje", 39320, displayHeight-140)
-        
+        text("By :- Kartikey Das Shukla", 39320, displayHeight-175)
+         text("Guide teacher :- Shrutika Nikalje", 39320, displayHeight-140)
         }
 }
 
 function startButton(){
-
+  gameState = 2;
   game.loop();
   home.stop();
 
-  gameState = 2;
+  
 
   bg_home.destroy();
   start_btn.destroy();
@@ -1904,18 +1904,14 @@ function startButton(){
 ob_1 = createSprite(0, 50,0,0);
 ob_1.velocityX = +9.5;
 //ob_1.visible = false;
-
 ob_2 = createSprite(1365, 500,2,1000)
 //ob_2.visible = false;
-
 storm_ = createSprite(displayWidth-670, displayHeight-440, 10,10);
 storm_.scale = 2.3
 storm_.addAnimation("st_", storm_Img);
-
 if(ob_1.isTouching(ob_2)){
   storm_.destroy();
   }
-
  */
 }
 
